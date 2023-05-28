@@ -1,5 +1,7 @@
-import Image from 'next/image'
+// Lib
 import { client } from "@/lib/sanityClient"
+// Components
+import Hero from "@/sections/Hero";
 
 
 export const getProductData = async () => {
@@ -24,7 +26,9 @@ export default async function Home() {
 
 
   return (
-    <div>
+    <main>
+      {/* Hero */}
+      <Hero />
       {data.map((item) => (
         <>
           <h1>{item.title}</h1>
@@ -33,6 +37,6 @@ export default async function Home() {
 
 
       ))}
-    </div>
+    </main>
   )
 }
