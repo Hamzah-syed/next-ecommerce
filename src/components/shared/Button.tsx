@@ -10,7 +10,7 @@ const Button: FC<IProps> = ({ text, className, ...rest }) => {
     const classes = customTwMerge("bg-black py-3.5 px-10 text-white capitalize font-semibold text-white text-20", className)
 
     return (
-        <button className={classes} >{rest.children} {text}</button>
+        <button className={classes} {...rest}>{rest.children} {text}</button>
     )
 }
 

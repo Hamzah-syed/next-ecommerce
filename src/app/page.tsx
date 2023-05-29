@@ -6,12 +6,13 @@ import ProductCard from "@/components/shared/ProductCard";
 import { Image } from "sanity";
 
 
-export const getProductData = async () => {
+ const getProductData = async () => {
   const res = await client.fetch(`*[_type=="product"]{
     title,
     description,
     price,
     image,
+    _id,
     category->{
       name
     }
@@ -26,6 +27,7 @@ interface IProduct {
   description: string,
   image: Image,
   price: number,
+  _id: string
   category: {
     name: string
   }
@@ -46,6 +48,7 @@ export default async function Home() {
           <>
             <ProductCard
               data={{
+                _id: item._id,
                 title: item.title,
                 category: item.category?.name,
                 price: item.price,
