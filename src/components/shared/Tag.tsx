@@ -8,7 +8,7 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
 
 const Tag: FC<IProps> = ({ className, text, ...rest }) => {
 
-    const classes = customTwMerge("bg-blue-100  text-blue-700 py-3 px-10 text-20 w-fit rounded-lg  font-semibold", className)
+    const classes = customTwMerge("bg-blue-100  text-blue-700 py-2.5 px-10 text-20 w-fit rounded-lg  font-semibold", className)
     return (
         <div className={classes} {...rest}>{text}</div>
     )

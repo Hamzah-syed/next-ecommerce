@@ -34,11 +34,11 @@ const Header = () => {
                 <div className='flex-1'>
                     <Image src={"/logo.webp"} className='' width={135} height={30} alt="Dine Market" />
                 </div>
-                <ul className='flex text-black gap-x-8 text-18'>
+                <ul className='hidden text-black lg:flex gap-x-8 text-18'>
                     {
                         links.map((item) => {
                             return (
-                                <li><Link href={`/${item.slug}/`}>{item.text}</Link></li>
+                                <li key={item.slug}><Link href={`/${item.slug}/`}>{item.text}</Link></li>
                             )
                         })
                     }
